@@ -6,6 +6,7 @@ import { connectDB } from './lib/db';
 import authRoutes from './modules/auth/auth.routes';
 import postRoutes from './modules/posts/post.routes';
 import contactRoutes from './modules/contacts/contacts.routes';
+import teamRoutes from './modules/team/team.routes';
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/posts', postRoutes);
 app.use('/api/v1/contact', contactRoutes);
+app.use('/api/v1/team', teamRoutes);
 
 app.get('/', (_req, res) => {
   res.json({ message: 'Grail Attorneys API is running' });
